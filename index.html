@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="interface.css" />
+    </head>
+        <body>
+            <Header><b>Idle Test Game</b></Header><br />
+            Points: <span id="points"></span><br />
+            Prestige Points: <span id="prestigePoints"></span><br />
+            <div>
+                <button onClick="pointClick(1)">Click</button><br />
+            </div>
+            <header>Upgrades</header>
+            <div>
+                <button onClick="buyCursor()">Cursors + 1</button><br />
+                Cursors: <span id="cursors">0</span><br />
+                Cost: <span id="cursorCost">10</span><br />
+            </div>
+            <div>
+                <button onClick="upgradePointsPerClick()">Points per Click + 1</button><br />
+                Purchases: <span id="upgradeOnePurchases">0</span><br />
+                Cost: <span id="upgradeOneCost">50</span>
+            </div>
+            <div>
+                <button onClick="prestigePointGain()">+1 Prestige Point</button>
+                Cost: <span id="prestigePointCost">1000</span>
+            </div>
+
+            <script type="text/javascript" src="main.js"></script>
+        </body>
+</html>
