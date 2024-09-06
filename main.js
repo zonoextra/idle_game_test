@@ -1,50 +1,51 @@
-let points = 0;
-let cursors = 0;
+let essence = 0;
+let essenceGainer = 0;
 let upgradeOnePurchases = 0;
 let testNum = 0;
-let pointsPerClick = 1;
-let prestigePoints = 0;
+let essencePerClick = 1;
+let prestigeEssence = 0;
+let gainers = 0;
 
-function pointClickCursor(number) {
+function essenceClickCursor(number) {
 
-    points = points + Math.floor(number * Math.pow(1 + prestigePoints, 2));
-    document.getElementById("points").innerHTML = points; 
-
-}
-
-function pointClick(number) {
-
-    points = points + Math.floor((number + upgradeOnePurchases) * Math.pow(1 + prestigePoints, 2));
-    document.getElementById("points").innerHTML = points; 
+    essence = essence + Math.floor(number * Math.pow(1 + prestigeEssence, 2));
+    document.getElementById("essence").innerHTML = essence; 
 
 }
 
-function buyCursor() {
+function essenceClick(number) {
 
-    let cursorCost = Math.floor(10 * Math.pow(1.1, cursors));
-    if(points>=cursorCost) {
+    essence = essence + Math.floor((number + upgradeOnePurchases) * Math.pow(1 + prestigeEssence, 2));
+    document.getElementById("essence").innerHTML = essence; 
 
-        cursors++;
-        points-= cursorCost;
-        document.getElementById("cursors").innerHTML = cursors;
-        document.getElementById("points").innerHTML = points;
+}
+
+function buyGainer() {
+
+    let gainerCost = Math.floor(10 * Math.pow(1.1, gainers));
+    if(essence>=gainerCost) {
+
+        gainers++;
+        essence-= gainerCost;
+        document.getElementById("gainers").innerHTML = gainers;
+        document.getElementById("essence").innerHTML = essence;
 
         }
 
-    let cursorCostNext = Math.floor(10 * Math.pow(1.1, cursors));
-    document.getElementById('cursorCost').innerHTML = cursorCostNext;
+    let gainerCostNext = Math.floor(10 * Math.pow(1.1, gainers));
+    document.getElementById('gainerCost').innerHTML = gainerCostNext;
 
 }
 
 function upgradePointsPerClick() {
 
     let upgradeOneCost = Math.floor(50 * Math.pow(1.25, upgradeOnePurchases));
-    if(points>=upgradeOneCost) {
+    if(essence>=upgradeOneCost) {
 
         upgradeOnePurchases++;
-        points-= upgradeOneCost;
+        essence-= upgradeOneCost;
         document.getElementById("upgradeOnePurchases").innerHTML = upgradeOnePurchases;
-        document.getElementById("points").innerHTML = points;
+        document.getElementById("essence").innerHTML = essence;
 
     }
 
@@ -53,15 +54,15 @@ function upgradePointsPerClick() {
     
 }
 
-function prestigePointGain() {
+function prestigeEssenceGain() {
 
     let prestigePointCost = 1000;
-    if(points>=prestigePointCost) {
+    if(essence>=prestigeEssenceCost) {
 
         prestigePoints++;
-        points-= prestigePointCost;
-        document.getElementById("points").innerHTML = points;
-        document.getElementById("prestigePoints");
+        essence-= prestigeEssenceCost;
+        document.getElementById("essence").innerHTML = essence;
+        document.getElementById("prestigeEssence") = prestigeEssence;
 
     }
 }
@@ -81,9 +82,9 @@ class Time {
     
     static doThing() {
 
-        pointClickCursor(cursors);
-        document.getElementById("points").innerHTML = points; 
-        document.getElementById("prestigePoints").innerHTML = prestigePoints; 
+        essenceClickCursor(gainers);
+        document.getElementById("essence").innerHTML = essence; 
+        document.getElementById("prestigeEssence").innerHTML = prestigeEssence; 
 
     }
     
